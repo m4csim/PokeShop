@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class PokemonCardData extends StatelessWidget {
   final String image;
   final String name;
+  final int count;
   const PokemonCardData({
     Key? key,
     required this.name,
     required this.image,
+    required this.count,
   }) : super(key: key);
 
   @override
@@ -31,6 +33,21 @@ class PokemonCardData extends StatelessWidget {
             color: Colors.black87,
           ),
         ),
+        Row(
+          children: [
+            Container(
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(40.0),
+                      bottomRight: Radius.circular(40.0),
+                      topLeft: Radius.circular(40.0),
+                      bottomLeft: Radius.circular(40.0)),
+                ),
+                padding: const EdgeInsets.all(8),
+                child: Text(count.toString()))
+          ],
+        )
       ],
     );
   }

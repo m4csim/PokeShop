@@ -6,12 +6,14 @@ class PokemonCard extends StatelessWidget {
   final int id;
   final String name;
   final String image;
+  final int count;
 
   const PokemonCard({
     Key? key,
     required this.id,
     required this.name,
     required this.image,
+    required this.count,
   }) : super(key: key);
 
   BoxDecoration getContainerDecoration() => BoxDecoration(
@@ -43,7 +45,11 @@ class PokemonCard extends StatelessWidget {
           decoration: getContainerDecoration(),
           child: Stack(
             children: [
-              PokemonCardData(name: name, image: image),
+              PokemonCardData(
+                name: name,
+                image: image,
+                count: count,
+              ),
             ],
           ),
         ),

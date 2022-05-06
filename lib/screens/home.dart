@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import '/api/pokeapi.dart';
@@ -24,8 +25,8 @@ class _HomeState extends State<Home> {
 
   void getPokemonFromPokeApi() async {
     PokeAPI.getPokemon().then((response) {
-      List<Map<String, dynamic>> data =
-          List.from(json.decode(response.body)['results']);
+      //print(json.decode(response.body));
+      List<Map<String, dynamic>> data = List.from(json.decode(response.body));
       setState(() {
         pokemon = data.asMap().entries.map<Pokemon>((element) {
           element.value['id'] = element.key + 1;
