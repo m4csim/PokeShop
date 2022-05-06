@@ -1,6 +1,6 @@
 # App
 
-A new Flutter project.
+Commerial Flutter project for buying Pokemon !
 
 ## Getting Started
 
