@@ -37,6 +37,7 @@ class _PokemonGridState extends State<PokemonGrid> {
               name: pokemon.name,
               image: pokemon.img,
               count: pokemon.count,
+              price: pokemon.price,
             ),
           )
           .toList(),

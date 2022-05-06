@@ -28,7 +28,11 @@ class Details extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            DetailData(id: arguments.id),
+            DetailData(
+              id: arguments.id,
+              price: arguments.price,
+              count: arguments.count,
+            ),
           ],
         ),
       ),

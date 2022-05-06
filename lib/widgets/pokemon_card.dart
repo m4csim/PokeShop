@@ -7,14 +7,16 @@ class PokemonCard extends StatelessWidget {
   final String name;
   final String image;
   final int count;
+  final int price;
 
-  const PokemonCard({
-    Key? key,
-    required this.id,
-    required this.name,
-    required this.image,
-    required this.count,
-  }) : super(key: key);
+  const PokemonCard(
+      {Key? key,
+      required this.id,
+      required this.name,
+      required this.image,
+      required this.count,
+      required this.price})
+      : super(key: key);
 
   BoxDecoration getContainerDecoration() => BoxDecoration(
         borderRadius: BorderRadius.circular(24),
@@ -37,7 +39,7 @@ class PokemonCard extends StatelessWidget {
           Navigator.pushNamed(
             context,
             "/details",
-            arguments: PokemonScreenData(id, name, image),
+            arguments: PokemonScreenData(id, name, image, price, count),
           )
         },
         child: Container(
@@ -46,10 +48,7 @@ class PokemonCard extends StatelessWidget {
           child: Stack(
             children: [
               PokemonCardData(
-                name: name,
-                image: image,
-                count: count,
-              ),
+                  name: name, image: image, count: count, price: price),
             ],
           ),
         ),
